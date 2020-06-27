@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="1200.0" styleClass="menuBackground" stylesheets="@../CSS/background.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.IngameOptionsController">
+   <children>
+      <Label alignment="CENTER" text="OPTIONS" textAlignment="CENTER" textFill="WHITE">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+         <font>
+            <Font name="OCR A Extended" size="55.0" />
+         </font>
+         <padding>
+            <Insets bottom="100.0" />
+         </padding>
+      </Label>
+      <Label text="Music:" textFill="WHITE">
+         <font>
+            <Font name="OCR A Extended" size="20.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="3.0" />
+         </VBox.margin>
+      </Label>
+      <ToggleButton fx:id="MusicToggle" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" onAction="#toggleMusic" selected="true" style="-fx-base: lightgreen;" text="ON" textFill="WHITE">
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <font>
+            <Font name="OCR A Extended" size="15.0" />
+         </font>
+      </ToggleButton>
+      <Label layoutX="583.0" layoutY="179.0" text="Sound Effects:" textFill="WHITE">
+         <font>
+            <Font name="OCR A Extended" size="20.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="3.0" top="50.0" />
+         </VBox.margin>
+      </Label>
+      <ToggleButton fx:id="SoundEffectsToggle" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" onAction="#toggleSoundEffects" selected="true" style="-fx-base: lightgreen;" text="ON" textFill="WHITE">
+         <font>
+            <Font name="OCR A Extended" size="15.0" />
+         </font></ToggleButton>
+      <Label layoutX="547.0" layoutY="289.0" text="FPS Counter:" textFill="WHITE">
+         <padding>
+            <Insets bottom="3.0" />
+         </padding>
+         <font>
+            <Font name="OCR A Extended" size="20.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="50.0" />
+         </VBox.margin>
+      </Label>
+      <ToggleButton fx:id="fpsCounterToggle" minHeight="30.0" minWidth="100.0" mnemonicParsing="false" onAction="#toggleFPS" style="-fx-base: salmon;" text="OFF" textFill="WHITE">
+         <effect>
+            <MotionBlur radius="0.0" />
+         </effect>
+         <font>
+            <Font name="OCR A Extended" size="15.0" />
+         </font></ToggleButton>
+      <Button fx:id="backToMenuButton" minHeight="50.0" minWidth="200.0" mnemonicParsing="false" onAction="#goBackToMenu" styleClass="buttonBackground" text="Menu" textFill="WHITE">
+         <VBox.margin>
+            <Insets top="130.0" />
+         </VBox.margin>
+         <font>
+            <Font name="OCR A Extended" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="resumeButton" minHeight="75.0" minWidth="333.0" mnemonicParsing="false" styleClass="buttonBackground" text="Resume" textAlignment="CENTER" textFill="WHITE">
+         <VBox.margin>
+            <Insets left="800.0" top="50.0" />
+         </VBox.margin>
+         <font>
+            <Font name="OCR A Extended" size="24.0" />
+         </font>
+      </Button>
+   </children>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</VBox>

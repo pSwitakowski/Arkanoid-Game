@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="gamePane" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#gameOnKeyPressed" prefHeight="800.0" prefWidth="1200.0" styleClass="gameBackground" stylesheets="@../CSS/background.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.GameController">
+   <children>
+      <Label fx:id="levelLabel" layoutX="483.0" layoutY="379.0" text="Level 1" textFill="WHITE">
+         <font>
+            <Font name="OCR A Extended" size="64.0" />
+         </font>
+      </Label>
+      <Label fx:id="pressSpaceLabel" layoutX="511.0" layoutY="447.0" text="Press Space to start" textFill="WHITE">
+         <font>
+            <Font name="OCR A Extended" size="18.0" />
+         </font>
+      </Label>
+      <Rectangle fx:id="gamePlatform" arcHeight="5.0" arcWidth="5.0" focusTraversable="true" height="20.0" layoutX="500.0" layoutY="671.0" onKeyPressed="#platformMovementOnKeyPressed" onKeyReleased="#platformMovementOnKeyReleased" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="paddleBackground" width="200.0">
+         <fill>
+            <LinearGradient endX="0.6285714285714286" endY="1.0">
+               <stops>
+                  <Stop color="#e000f0" />
+                  <Stop color="#8bcca0" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill></Rectangle>
+      <Circle fx:id="Ball" layoutX="600.0" layoutY="649.0" radius="12.0" stroke="BLACK" strokeMiterLimit="0.0" strokeType="INSIDE" strokeWidth="0.0" styleClass="ballBackground">
+         <fill>
+            <LinearGradient endX="0.6714285714285714" endY="1.0" startX="0.9476190476190476">
+               <stops>
+                  <Stop color="#73ff01" />
+                  <Stop color="#73ff01" offset="0.007662835249042145" />
+                  <Stop color="#ff9cf7" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </fill></Circle>
+      <Label fx:id="currentFPSLabel" layoutX="1068.0" layoutY="14.0" text="Current FPS:  " textFill="WHITE">
+         <font>
+            <Font name="OCR A Extended" size="13.0" />
+         </font></Label>
+      <Label fx:id="gameOverLabel" layoutX="475.0" layoutY="399.0" text="Game over!" textAlignment="CENTER" textFill="WHITE" visible="false">
+         <font>
+            <Font name="OCR A Extended" size="48.0" />
+         </font>
+      </Label>
+      <Label fx:id="pressSpaceLabel2" layoutX="509.0" layoutY="447.0" text="Press R to try again" textFill="WHITE" visible="false">
+         <font>
+            <Font name="OCR A Extended" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="congratulationsLabel" layoutX="400.0" layoutY="422.0" text="Level finished!" textFill="WHITE" visible="false">
+         <font>
+            <Font name="OCR A Extended" size="48.0" />
+         </font>
+      </Label>
+      <Label fx:id="startNextLevelLabel" layoutX="441.0" layoutY="473.0" text="Press Space to start next level" textFill="WHITE" visible="false">
+         <font>
+            <Font name="OCR A Extended" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="gameFinishedLabel" layoutX="228.0" layoutY="374.0" text="Congratulations!&#10;You have finished the game!&#10;" textAlignment="CENTER" textFill="WHITE" visible="false">
+         <font>
+            <Font name="OCR A Extended" size="48.0" />
+         </font>
+      </Label>
+      <Label fx:id="goBackToMenuLabel" layoutX="454.0" layoutY="493.0" text="Press Space to go back to Menu" textFill="WHITE" visible="false">
+         <font>
+            <Font name="OCR A Extended" size="18.0" />
+         </font>
+      </Label>
+      <HBox fx:id="currentLivesVBox" layoutX="14.0" layoutY="7.0" prefHeight="49.0" prefWidth="100.0" spacing="10.0">
+         <children>
+            <ImageView fx:id="heart1" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="heart2" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/heart.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="heart3" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/heart.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox layoutX="535.0" layoutY="14.0" prefHeight="31.0" prefWidth="150.0" spacing="15.0">
+         <children>
+            <Label text="Score:" textFill="WHITE">
+               <font>
+                  <Font name="OCR A Extended" size="20.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="scoreLabel" text="0" textFill="WHITE">
+               <font>
+                  <Font name="OCR A Extended" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+   </children>
+</Pane>

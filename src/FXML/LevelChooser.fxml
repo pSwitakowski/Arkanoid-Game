@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" styleClass="menuBackground" stylesheets="@../CSS/background.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MenuController">
+   <children>
+      <Label layoutX="369.0" layoutY="14.0" text="Choose level" textFill="WHITE">
+         <font>
+            <Font name="OCR A Extended" size="64.0" />
+         </font>
+      </Label>
+      <VBox fx:id="MainVBox" layoutX="5.0" layoutY="89.0" prefHeight="707.0" prefWidth="1191.0" spacing="30.0">
+         <children>
+            <VBox fx:id="level1VBox" alignment="TOP_CENTER" prefHeight="200.0" prefWidth="1147.0">
+               <children>
+                  <Label alignment="TOP_CENTER" text="Level 1 - &quot;Colorful&quot;" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="OCR A Extended" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="250.0" fitWidth="300.0" onKeyPressed="#level1Action" onMouseClicked="#level1Action" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Level1.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox fx:id="level2VBox" alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label alignment="TOP_CENTER" text="Level 2 - &quot;Sky full of stars&quot;" textFill="WHITE">
+                     <font>
+                        <Font name="OCR A Extended" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="250.0" fitWidth="300.0" onMouseClicked="#level2Action" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Level2.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <VBox fx:id="level3VBox" alignment="TOP_CENTER" layoutX="10.0" layoutY="260.0" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label text="Level 3 - &quot;WAT&quot;" textFill="WHITE">
+                     <font>
+                        <Font name="OCR A Extended" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="250.0" fitWidth="300.0" onMouseClicked="#level3Action" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Level3.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</Pane>
