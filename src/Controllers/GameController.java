@@ -587,8 +587,10 @@ public class GameController implements Initializable {
 
                 Preferences preferences = Preferences.userRoot().node("/Main");
                 updateFPSVisibility(preferences);
+
             }
             Preferences preferences = Preferences.userRoot().node("/Main");
+            SoundController.soundEffectsEnabled = preferences.getBoolean("soundEffectsEnabled",false);
             updateFPSVisibility(preferences);
             SoundController.toggleMusic(preferences.getBoolean("musicEnabled",false));
         });
@@ -602,6 +604,7 @@ public class GameController implements Initializable {
             if(!levelFinished && !isGameOver && levelStarted) toggleGameLoop();
 
                 Preferences preferences = Preferences.userRoot().node("/Main");
+                SoundController.soundEffectsEnabled = preferences.getBoolean("soundEffectsEnabled",false);
                 updateFPSVisibility(preferences);
                 SoundController.toggleMusic(preferences.getBoolean("musicEnabled",false));
         });
@@ -629,7 +632,7 @@ public class GameController implements Initializable {
         levelBlocks.clear();
         resetLevel();
 
-        Rectangle[] objects = new Rectangle[2];
+        Rectangle[] objects = new Rectangle[52];
         int rectLine=0;
         int rectColumn=0;
         int spaceBetweenRects = 10;

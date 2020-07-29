@@ -176,6 +176,9 @@ public class OptionsController implements Initializable {
      */
     @FXML
     void goBackToMenu(ActionEvent event) throws IOException {
+        Preferences preferences = Preferences.userRoot().node("/Main");
+        SoundController.soundEffectsEnabled = preferences.getBoolean("soundEffectsEnabled",false);
+
         SoundController.playMenuSound();
         Parent menuParent = FXMLLoader.load((getClass().getResource("../FXML/Menu.fxml")));
         Scene menuScene = new Scene(menuParent,Main.WIDTH, Main.HEIGHT);

@@ -11,12 +11,14 @@ import java.util.prefs.Preferences;
 
 
 /**
- * Class reponsible for controlling sound in application. Containts only static methods and variables.
+ * Class responsible for controlling sound in application. Contains only static methods and variables.
  */
 public class SoundController {
 
     private static Preferences preferences = Preferences.userRoot().node("/Main");
-    private static boolean soundEffectsEnabled=preferences.getBoolean("soundEffectsEnabled",false);
+    public static boolean soundEffectsEnabled=preferences.getBoolean("soundEffectsEnabled",false);
+
+
 
     private static String musicFile = "src/soundEffects/music.mp3";
     private static Media sound = new Media(new File(musicFile).toURI().toString());
@@ -44,6 +46,8 @@ public class SoundController {
             musicPlayer.seek(Duration.ZERO);
             musicPlayer.play();
         });
+
+        System.out.println("Toggling music...");
     }
 
     /**
@@ -79,7 +83,9 @@ public class SoundController {
     public static void playMenuSound(){
         if(soundEffectsEnabled) {
             menuButtonSound.play();
+            System.out.println("Menu button sound");
         }
+        System.out.println(soundEffectsEnabled);
     }
 
     /**

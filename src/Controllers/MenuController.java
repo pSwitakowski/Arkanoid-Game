@@ -25,7 +25,7 @@ public class MenuController implements Initializable {
     /**
      * Function responsible for handling choosing level 1. Loads the game and generates level 1 objects.
      * @param event MouseEvent of clicking the mouse at level 1 area.
-     * @throws IOException File input/output exception.sad
+     * @throws IOException File input/output exception
      */
     @FXML
     void level1Action(MouseEvent event) throws IOException {
@@ -164,7 +164,6 @@ public class MenuController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         Preferences preferences = Preferences.userRoot().node("/Main");
         boolean musicEnabled = preferences.getBoolean("musicEnabled",true);
-
         SoundController.toggleMusic(musicEnabled);
     }
 }
